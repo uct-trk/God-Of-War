@@ -1,0 +1,77 @@
+
+/*FONTS
+font-family: 'Changa', sans-serif;
+font-family: 'Open Sans', sans-serif;
+*/
+@import url('https://fonts.googleapis.com/css2?family=Changa:wght@500&family=Open+Sans:wght@300&display=swap');
+
+
+/*VARIABLES*/
+$primary-font: 'Changa', sans-serif;
+$secondary-font: 'Open Sans', sans-serif;
+$primary-color: #E51515;
+$secondary-color: #14151A;
+$date-color: #FFB320;
+$comment-color: #08ABBD;
+$gray-color:#9F9F9F;
+$light-color: #FEFEFE;
+$general-transition: all .5s;
+
+/*UTILITIES*/
+.bg{
+    &-dark{
+        background-color: $secondary-color;
+    }
+
+    &-light{
+        background-color: $light-color;
+    }
+}
+
+
+.nl{
+    &-2{ /*.nl-2*/
+        margin-left: 2rem;
+    }
+}
+
+.text-light{
+    color: $light-color;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.text-primary{
+    color: $secondary-color;
+    margin-bottom: 3rem;
+    margin-top: -5rem;
+}
+
+/*MIXINS*/
+
+@mixin flex-display($display, $align-items, $justify-content) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@mixin media ($screensize) {
+
+    @if ($screensize == x-large) {
+        @media(max-width: 1280px) { @content };
+    }
+
+    @if ($screensize == large) {
+        @media(max-width: 992px) { @content };
+    }
+
+    @if ($screensize == medium) {
+        @media(max-width: 768px) { @content };
+    }
+
+    @if ($screensize == small) {
+        @media(max-width: 576px) { @content };
+    }
+}
